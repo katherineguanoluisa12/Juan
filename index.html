@@ -12,7 +12,7 @@
       padding: 20px;
     }
     .container {
-      max-width: 600px;
+      max-width: 800px;
       margin: 0 auto;
       background-color: #fff;
       padding: 20px;
@@ -26,6 +26,22 @@
       color: #666;
       line-height: 1.6;
     }
+    .heart-carousel {
+      margin-top: 20px;
+      position: relative;
+      width: 300px;
+      height: 260px;
+      overflow: hidden;
+    }
+    .heart-carousel img {
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .heart-carousel img.visible {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
@@ -38,6 +54,26 @@
     <p>Te amo más de lo que las palabras pueden expresar y estoy emocionada por todo lo que el futuro nos depara juntos. Que este quinto mes sea solo el comienzo de una larga y hermosa historia de amor.</p>
     <p>Con todo mi cariño,</p>
     <p>Dayanna</p>
+    
+    <div class="heart-carousel">
+      <img class="visible" src="img/WhatsApp Image 2024-05-25 at 12.00.57 AM.jpeg/300x260" alt="Imagen 1">
+      <img src="img/WhatsApp Image 2024-05-25 at 12.01.22 AM (1).jpeg/300x260" alt="Imagen 2">
+      <img src="img/WhatsApp Image 2024-05-25 at 12.01.22 AM (2).jpeg/300x260" alt="Imagen 3">
+      <img src="img/WhatsApp Image 2024-05-25 at 12.01.22 AM.jpeg" alt="Imagen 3">
+      <!-- Agrega aquí más imágenes -->
+    </div>
   </div>
+
+  <script>
+    // Script para el carrusel en forma de corazón
+    const images = document.querySelectorAll('.heart-carousel img');
+    let idx = 0;
+
+    setInterval(() => {
+      images.forEach(image => image.classList.remove('visible'));
+      images[idx].classList.add('visible');
+      idx = (idx + 1) % images.length;
+    }, 2000); // Cambiar cada 2 segundos (2000ms)
+  </script>
 </body>
 </html>
